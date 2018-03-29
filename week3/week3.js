@@ -1,17 +1,14 @@
-var sijak = 0;
+var images = new Array('son1.svg','son2.svg','son3.svg')
+var start = 0;
 
-document.getElementById("left").onclick = function() {
-    // alert("left");
-    sijak--;
-    if (sijak < 0)
-        sijak = images.length - 1;
-    document.getElementById("myImage").src = images[sijak];
+document.getElementById("left").onclick=function(){
+    start--;
+    if(start<0) start=images.length-1;
+    document.getElementById("myImage").src=images[start];
 }
 
-document.getElementById("right").onclick = function() {
-    //alert("right");
-    sijak++;
-    if (sijak > images.length - 1)
-        sijak = 0;
-    document.getElementById("myImage").src = images[sijak];
+document.getElementById("right").onclick=function(){
+    start++;
+    if(start>images.length-1) start=0;
+    document.getElementById("myImage").src=images[start];
 }
