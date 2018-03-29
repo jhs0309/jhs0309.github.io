@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     
 body {
     margin: 0;
@@ -18,4 +19,26 @@ table {
 
 table td {
     border: 1px solid #ddd;
+=======
+    
+body {
+    margin: 0;
+}
+
+#main {
+    margin: auto;
+    max-width: 500px;
+    min-height: 200px;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+table {
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+table td {
+    border: 1px solid #ddd;
+>>>>>>> e47d39b0cdd0a7eb26ce7f6b1bb0ce86c4004139
 }
