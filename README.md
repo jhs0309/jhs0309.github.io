@@ -10,11 +10,7 @@
 <meta name="generator" content="Jekyll v3.6.2" />
 <meta property="og:title" content="jhs0309.github.io" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://jhs0309.github.io/" />
-<meta property="og:url" content="https://jhs0309.github.io/" />
-<meta property="og:site_name" content="jhs0309.github.io" />
 <script type="application/ld+json">
-{"name":"jhs0309.github.io","@type":"WebSite","url":"https://jhs0309.github.io/","headline":"jhs0309.github.io","@context":"http://schema.org"}</script>
 
 
     <link href="/assets/css/style.css?v=155b03ba0cc86c20f6a550bf8f968bb72ee25975" rel="stylesheet">
