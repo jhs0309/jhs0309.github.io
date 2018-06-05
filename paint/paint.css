@@ -1,0 +1,13 @@
+#canvas{width:100px; border:1px solid #999999; border-collapse:collapse;}
+td{width:1px; height:1px;}
+th.key{font-family:Arial, Helvetica, sans-serif; font-size:12px; border-bottom:1px solid #999999;}
+#toolbar{width:100px; border:1px solid #999999; border-collapse:collapse;}
+td.colorbox{width:20px; height:20px; margin:2px; border:1px solid #999999;}
+.c_FF00FF{ background-color:#FF00FF;}
+.c_00FFFF{ background-color:#00FFFF;}
+.c_FFFF00{ background-color:#FFFF00;}
+.c_0000FF{ background-color:#0000FF;}
+.c_00FF00{ background-color:#00FF00;}
+.c_FF0000{ background-color:#FF0000;}
+.c_FFFFFF{ background-color:#FFFFFF;}
+.c_000000{ background-color:#000000;}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="euc-kr" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <table border="1" style="width:500px; height:500px;">
+        <tr style="height:80px;">
+            <td style="background-color:red; cursor:pointer;" onclick="fn_Color('red');">빨강색</td>
+            <td style="background-color:green; cursor:pointer;" onclick="fn_Color('green');">녹색</td>
+            <td style="background-color:blue; cursor:pointer;" onclick="fn_Color('blue');">파랑색</td>
+            <td style="background-color:yellow; cursor:pointer;" onclick="fn_Color('yellow');">노랑색</td>
+            <td style="background-color:pink; cursor:pointer;" onclick="fn_Color('pink');">핑크색</td>
+           
+
+            
+        </tr>
+        <tr style="width:100%; height:420px;">
+            <td colspan="5">
+                <canvas id="can1" width="500" height="420" 
+                    style="background-color:white;cursor:crosshair;">
+                </canvas>
+ 
+                <script type="text/javascript">
+                    var canvas = document.getElementById("can1");
+                    var cv = canvas.getContext("2d");
+                    var event_Chk;
+                    var x, y;
+ 
+                    var state_Coloe = "rgb(0, 0, 0)";
+                    var eraser = false;
+ 
+                    function fn_Clear() {
+                        cv.clearRect(0, 0, canvas.width, canvas.height);
+                    };
+ 
+                    function fn_Color(color) {
+                        switch (color)
+                        {
+                            case "red":
+                                state_Coloe = "rgb(255, 0, 0)";
+                                break;
+                            case "green":
+                                state_Coloe = "rgb(29, 219, 22)";
+                                break;
+                            case "blue":
+                                state_Coloe = "rgb(1, 0, 255)";
+                                break;
+                            case "yellow":
+                                state_Coloe = "rgb(255, 187, 0)";
+                                break;
+                            case "pink":
+                                state_Coloe = "rgb(255, 0, 127)";
+                                break;
+                           
+                        }
+                        alert(state_Coloe);
+                    };
+ 
+                    function fn_Sketch() {
+                        canvas.onmousedown = function (event) {
+                            var x = event.x;
+                            var y = event.y;
+ 
+                            cv.beginPath();
+ 
+                            cv.moveTo(x, y);
+                            cv.stroke();
+                            cv.lineWidth = 3;
+                        };
+ 
+                        canvas.onmouseup = function (event) {
+                            var x = event.x;
+                            var y = event.y;
+ 
+                            cv.lineTo(x, y);
+                            cv.stroke();
+                            cv.lineWidth = 3;
+ 
+                            cv.closePath();
+                        };
+                    };
+ 
+                    function fn_Triangle() {
+                        cv.beginPath(); //패스를 초기화
+ 
+                        cv.moveTo(50, 0);      //시작위치 X,Y좌표
+                        cv.lineTo(0, 50);      //선 그리기
+                        cv.lineTo(100, 50);    //선 그리기
+ 
+                        cv.closePath();         //그리기 종료
+                        cv.fillStyle = "rgb(0,0,255)";
+                        cv.fill();              //삼각형 그리기 렌더링
+                    };
+ 
+                    canvas.addEventListener('mousedown', function (event) {
+                        event_Chk = true;
+ 
+                        var rect = canvas.getBoundingClientRect();
+ 
+                        x = event.clientX - rect.left;
+                        y = event.clientY - rect.top;
+ 
+                        cv.beginPath();
+                        cv.moveTo(x, y);
+                        cv.strokeStyle = state_Coloe;
+                    }, false);
+ 
+                    canvas.addEventListener('mousemove', function (event) {
+ 
+                        if (event_Chk == true) {
+                            var rect = canvas.getBoundingClientRect();
+ 
+                            x = event.clientX - rect.left;
+                            y = event.clientY - rect.top;
+ 
+                            cv.lineTo(x, y);
+                            cv.stroke();
+                        }
+                    }, false);
+ 
+                    canvas.onmouseup = function () {
+                        cv.closePath();
+                        event_Chk = false;
+                    };
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td style="cursor:pointer;" onclick="fn_Clear();">Erase All</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
+
