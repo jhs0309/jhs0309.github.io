@@ -1,44 +1,18 @@
-// app.js
-
-
-
-
-
-/*
-    var config = {
-        apiKey: "AIzaSyCqpMjTI7Xa2xnwDNsOGnEYsOy8x8ziioQ",
-        authDomain: "webp-e86d6.firebaseapp.com",
-        databaseURL: "https://webp-e86d6.firebaseio.com",
-        projectId: "webp-e86d6",
-        storageBucket: "webp-e86d6.appspot.com",
-        messagingSenderId: "615838044537"
-      };
-      firebase.initializeApp(config);
-
-
-    var ref = firebase.database().ref("Empolyees");
-    
-
-"https://www.gstatic.com/firebasejs/5.0.4/firebase.js"
-
-me https://www.gstatic.com/firebasejs/5.0.4/firebase.js
-*/
-
-
 function setupFireBase(){
     // Initialize Firebase
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAyIwNWJ9OGTA0wrNH9FVcktnG1esrvOYQ",
-    authDomain: "usw-11051061.firebaseapp.com",
-    databaseURL: "https://usw-11051061.firebaseio.com",
-    projectId: "usw-11051061",
-    storageBucket: "usw-11051061.appspot.com",
-    messagingSenderId: "545111732800"
-  };
-  firebase.initializeApp(config);
 
-    var ref = firebase.database().ref("Empolyees");
+    var config = {
+        apiKey: "AIzaSyAyIwNWJ9OGTA0wrNH9FVcktnG1esrvOYQ",
+        authDomain: "usw-11051061.firebaseapp.com",
+        databaseURL: "https://usw-11051061.firebaseio.com",
+        projectId: "usw-11051061",
+        storageBucket: "usw-11051061.appspot.com",
+        messagingSenderId: "545111732800"
+      };
+      
+      firebase.initializeApp(config);
+        var ref = firebase.database().ref("Employees");
+
     
     //when child is added
     ref.on("child_added", function(snap){
@@ -130,6 +104,5 @@ window.onload = function(){
 
 
     });
-
 
 }

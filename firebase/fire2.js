@@ -1,9 +1,8 @@
-// app.js
-
-
 function setupFireBase(){
+    
+
     // Initialize Firebase
-  var config = {
+ var config = {
     apiKey: "AIzaSyAyIwNWJ9OGTA0wrNH9FVcktnG1esrvOYQ",
     authDomain: "usw-11051061.firebaseapp.com",
     databaseURL: "https://usw-11051061.firebaseio.com",
@@ -14,7 +13,6 @@ function setupFireBase(){
   
   firebase.initializeApp(config);
     var ref = firebase.database().ref("Customers");
-    
     //when child is added
     ref.on("child_added", function(snap){
         var list = document.querySelector("#list");
