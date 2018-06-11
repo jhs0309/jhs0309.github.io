@@ -13,6 +13,8 @@ function setupFireBase(){
   
   firebase.initializeApp(config);
     var ref = firebase.database().ref("Customers");
+
+
     //when child is added
     ref.on("child_added", function(snap){
         var list = document.querySelector("#list");
