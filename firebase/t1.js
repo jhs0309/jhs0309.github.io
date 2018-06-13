@@ -1,5 +1,4 @@
 function setupFireBase(){
-    // Initialize Firebase
 
     var config = {
         apiKey: "AIzaSyAyIwNWJ9OGTA0wrNH9FVcktnG1esrvOYQ",
@@ -16,7 +15,6 @@ function setupFireBase(){
     
         var ref = firebase.database().ref("Empolyees");
     
-        //when child is added
         ref.on("child_added", function(snap){
             var list           = document.querySelector("#list");
             const tr           = document.createElement("tr");
@@ -78,7 +76,6 @@ function setupFireBase(){
     
     window.onload = function(){
         
-        //alert("ok");
         setupFireBase();
         
         var btnSave = document.querySelector("#button_save");
