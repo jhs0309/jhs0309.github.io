@@ -9,36 +9,58 @@
     <link rel="stylesheet" href="style.css"/>
    
 </head>
+
+
 <body>
-    <h1>Dashboard</h1>
-    <div id="main">
-        <h3>Team</h3>
+    <h1>Dashboard</h1>  <!-- 제목 -->
+    
+    <div id="main">       <!--구역 -->
+        <h3>Team</h3>     <!--구역 안 제목 -->
+       
         <select id="team">
             <option value="C">Cavaliers</option>
             <option value="W">Warriors</option>
         </select>
-        <h3>Description</h3>
-        <textarea id="play" rows="5">
 
-        </textarea>
-        <h3>Points</h3>
-        <input id="point" type="text" placeholder="points"/>
+        <h3>Players name </h3>
+        <textarea id="man" rows"1">   </textarea>
+
+
+        <h3>Description</h3>
+        <textarea id="play" rows="5">  </textarea>
+
+
+
+        <h2>Points</h2>
+        <input id="point" type="text" />
+        
         <p>
             <button id="save">Save</button>
         </p>
+        
         <hr/>
 
          <!-- PLAY BY PLAY TABLE -->
+        
          <table id="list" width="100%">
                 <tr>
                     <td id="td_team">Team</td>
                     <td id="td_play">Play</td>
-                    <td id="td_score" class="right-align">Score</td>
+                    <td id="td_score">Score</td>
+                    <td id="td_man">name</td>
                 </tr>
 
         </table>
     </div>
 </body>
+
+
+
+
+
+
+
+
 <script src="dash.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 </html>

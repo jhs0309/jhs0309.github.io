@@ -11,20 +11,25 @@ function setupFirebase(){
       };
       
       firebase.initializeApp(config);
-        var ref = firebase.database().ref("dashboard");
+        var ref = firebase.database().ref("test");
     
         //when child is added
     ref.on("child_added", function(snap){
         var list = document.getElementById("list");
+
         const tr = document.createElement("tr");
+
         const td_play = document.createElement("td");
         const td_score = document.createElement("td");
+        const td_man=document.createElement("td");
 
-        td_play.innerText = snap.child("team").val() + " - " + snap.child("play").val();
+        td_play.innerText = snap.child("team").val() + " --------- " + snap.child("play").val();
         td_score.innerText = snap.child("score").val();
+        td_man.innerText=snap.child("name").val();
 
         tr.appendChild(td_play);
         tr.appendChild(td_score);
+        tr.appendChild(td_man);
 
         tr.id = snap.key;   // snap.key(firebase의 row id)가 table row의 id로 들어감
         list.appendChild(tr);
