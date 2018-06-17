@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+
+
+
+
+
+<body>
+
+    <h1>User</h1> 
+    <div id="main">
+        <div class="scores">
+              
+
+             <canvas id="myCanvas" width="480" height="320"></canvas>
+
+
+        <br/>
+
+            <h2>show</h2>
+                <hr/>
+
+        
+        <table id="list" width="100%" border="1">
+            <tr>
+                <td id="td_Ball">Ball ID</td>
+                <td id="td_Color" >Color</td>
+                <td id="td_Radius">Radius</td>
+                <td id="td_Status">Status</td>
+            </tr>
+
+        </table>
+
+
+    </div>
+</body>
+<script>
+
+function setupFirebase(){
+    var config = {
+        apiKey: "AIzaSyAyIwNWJ9OGTA0wrNH9FVcktnG1esrvOYQ",
+        authDomain: "usw-11051061.firebaseapp.com",
+        databaseURL: "https://usw-11051061.firebaseio.com",
+        projectId: "usw-11051061",
+        storageBucket: "usw-11051061.appspot.com",
+        messagingSenderId: "545111732800"
+      };
+      
+      firebase.initializeApp(config);
+        var ref = firebase.database().ref("Ball");
+    
+        
+    ref.on("child_added", function(snap){
+        var list = document.getElementById("list");
+
+        const tr = document.createElement("tr");
+
+        const td_Ball = document.createElement("td");
+        const td_Color = document.createElement("td");
+        const td_Radius=document.createElement("td");
+        const td_Status=document.createElement("td");
+
+        td_Ball.innerText = snap.child("Ball").val()
+        td_Color.innerText = snap.child("Color").val();
+        td_Radius.innerText=snap.child("Radius").val();
+        td_Status.innerText=snap.child("Status").val();
+
+        tr.appendChild(td_Ball);
+        tr.appendChild(td_Color);
+        tr.appendChild(td_Radius);
+        tr.appendChild(td_Status);
+
+        tr.id = snap.key;   
+        list.appendChild(tr);
+        
+        
+
+    });
+}
+
+window.onload = function(){
+    setupFirebase();
+
+}
+
+
+</script>
+
+
+<script src="ball.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+</html>

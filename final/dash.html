@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+   
+</head>
+
+
+<body>
+    <h1>Dashboard</h1>  
+    
+    <div id="main">      
+        <h3>Ball ID</h3>    
+        <input id="Ball" type="text"/>
+        
+
+        <h3>Color</h3>
+        <textarea id="Color" rows"1">   </textarea>
+
+
+        <h3>Radius</h3>
+        <input id="Radius" type="text" />
+
+        <h3>Status</h3>
+        <textarea id="Status" rows="1">  </textarea>
+
+
+        
+        <p>
+            <button id="save">Save</button>
+        </p>
+        
+        <hr/>
+
+         <!-- PLAY BY PLAY TABLE -->
+        
+         <table id="list" width="100%" border="1">
+                <tr>
+                    <td id="td_Ball">Ball ID</td>
+                    <td id="td_Color">Color</td>
+                    <td id="td_Radius">Radius</td>
+                    <td id="td_Status">Status</td>
+                </tr>
+
+        </table>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+<script src="dash.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+</html>
